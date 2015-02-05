@@ -1,0 +1,11 @@
+= simple_form_for @word do |f|
+  = f.error_notification
+  .form-group
+    = f.input :translation, input_html: { class: 'form-control' }
+  .form-group
+    = f.input :romaji, input_html: { class: 'form-control' }
+  .form-group
+    = f.input :kana, input_html: { class: 'form-control' }
+  .form-group
+    = f.input :kanji, input_html: { class: 'form-control' }
+  = f.submit 'Save', class: 'btn btn-default'

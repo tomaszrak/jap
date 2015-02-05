@@ -1,0 +1,11 @@
+:javascript
+  window.course = #{@course.to_json}
+
+%div{"ng-app" => "japaneseLearningApp"}
+  %div{"ng-controller" => "learnCtrl"}
+    .alert{"ng-class" => "alert.class"}
+      {{alert.message}}
+    %p#notice= notice
+    .row
+      .col-md-8.col-md-offset-2
+        = render 'question'

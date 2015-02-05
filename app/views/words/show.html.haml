@@ -1,0 +1,16 @@
+%p
+  %b Translation:
+  = @word.translation
+%p
+  %b Kana:
+  = @word.kana
+%p
+  %b Romaji:
+  = @word.romaji
+%p
+  %b Kanji:
+  = @word.kanji
+
+= link_to 'Edit', edit_word_path(@word)
+\|
+= link_to 'Back', words_path

@@ -1,0 +1,15 @@
+.word-box
+  %span.kana{"ng-if" => "current_word.showKana"}<
+    {{current_word.kana}}
+  %span.kanji{"ng-if" => "current_word.showKanji"}<
+    {{current_word.kanji}}
+  %span.romaji{"ng-if" => "current_word.showRomaji"}<
+    {{current_word.romaji}}
+  %span.only-romaji{"ng-if" => "current_word.showOnlyRomaji"}
+    {{current_word.romaji}}
+.means
+  means:
+.word-translation
+  {{current_word.translation}}
+%button.btn.btn-primary.btn-lg{"ng-click" => "end_new(current_word)", "app-version" => true}
+  Next

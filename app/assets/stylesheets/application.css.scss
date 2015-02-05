@@ -1,0 +1,114 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+ $white: rgb(255,255,255);
+ $cream_light: rgb(232,213,185);
+ $pink: rgb(252,58,81);///
+ $pink_dark: #FA253F;
+ $transparent-black: rgba(0,0,0,0.3);
+ $transparent-white: rgba(255,255,255,0.8);
+
+
+ @import "bootstrap";
+
+ body {
+  padding-bottom: 10px;
+  background: $cream_light !important;
+ }
+
+ td, th {
+  border-top: 1px solid $pink !important;
+ }
+
+ table a {
+  color: $pink !important;
+ }
+
+.form-control {
+  max-width: 400px;
+}
+
+.word-box {
+  background: $pink;
+  text-align: center;
+  color: $white;
+  font-size: 4em;
+  line-height: 1.3em;
+  padding: 10px;
+  border-radius: 20px;
+  text-shadow: -1px -1px 1px $transparent-black;
+  margin: 10px 0 10px 0;
+}
+
+.romaji {
+  font-style: italic;
+  color: $transparent-white;
+  font-family: "Times New Roman"
+}
+
+.kanji {
+  background: $pink_dark;
+  border-radius: 10px;
+  margin: 0 10px 0 10px;
+  padding: 5px;
+}
+
+.word-translation {
+  text-align: center;
+  font-size: 5em;
+  margin: 20px 0;
+}
+
+.means {
+  margin: 20px 0;
+}
+
+#questions {
+  input[type=radio] {
+    display: none;
+  }
+
+  input[type=radio] + label {
+    display: block;
+    width: 100%;
+    border-radius: 20px;
+    border: 2px solid $pink;
+    padding: 15px;
+    margin: 10px 0;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+
+  input[type=radio]:checked + label { 
+    background-image: none;
+    background-color:#d0d0d0;
+  }
+
+  input[type=text] {
+    width: 100%;
+    display: block;
+    border: none;
+    color: #333;
+    background: transparent;
+    border-bottom: 2px dotted $pink;
+    padding: 5px 2px 0 2px;
+    margin: 20px 0;
+    font-size: 4em;
+  }
+
+  input[type=text]:focus {
+    outline: none;
+    border-color: $pink_dark;
+  }
+}

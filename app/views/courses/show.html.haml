@@ -1,0 +1,12 @@
+%h1
+  = @course.name
+
+- @course.words.each do |word|
+  %li
+    %strong
+      = word.translation
+    = word.romaji
+
+= link_to 'Edit', edit_course_path(@course)
+\|
+= link_to 'Back', courses_path

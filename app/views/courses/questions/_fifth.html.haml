@@ -1,0 +1,7 @@
+.word-box
+  {{current_word.translation}}
+.means
+  means:
+%input{"type" => "text", "ng-model" => "answer_text"}
+%button.btn.btn-primary.btn-lg{"ng-click" => "end_text_question(current_word, answer_text)"}
+  Next

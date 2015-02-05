@@ -1,0 +1,13 @@
+- @learnings.each do |learning|
+  %h1 
+    = learning.course.name
+  - learning.course.words.each do |word|
+    %li
+      %strong
+        = word.translation
+      = word.romaji
+      %span.label.label-info
+        = "#{word.progress_for(current_user)}% learned"
+- if @learnings.empty?
+  No stats to show.
+

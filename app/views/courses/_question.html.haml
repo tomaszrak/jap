@@ -1,0 +1,17 @@
+#questions{"ng-switch" => "current_question"}
+  %div{"ng-switch-when" => "start"}
+    = render 'courses/start'
+  %div{"ng-switch-when" => "new"}
+    = render 'courses/questions/new'
+  %div{"ng-switch-when" => "first"}
+    = render 'courses/questions/first'
+  %div{"ng-switch-when" => "second"}
+    = render 'courses/questions/second'
+  %div{"ng-switch-when" => "third"}
+    = render 'courses/questions/third'
+  %div{"ng-switch-when" => "fourth"}
+    = render 'courses/questions/fourth'
+  %div{"ng-switch-when" => "fifth"}
+    = render 'courses/questions/fifth'
+  %div{"ng-switch-when" => "end"}
+    = render 'courses/end'

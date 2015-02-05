@@ -1,0 +1,11 @@
+%h2
+  Learning finished
+%ul
+  %li{"ng-repeat" => "word in words"}
+    %strong
+      {{word.translation}}
+    {{word.romaji}}
+    %span.label.label-success{"ng-if" => "!word.errors"}
+      OK
+    %span.label.label-danger{"ng-if" => "word.errors"}
+      {{word.errors}} errors

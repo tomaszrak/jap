@@ -1,0 +1,18 @@
+.word-box
+  %span.kana{"ng-if" => "current_word.showKana"}<
+    {{current_word.kana}}
+  %span.kanji{"ng-if" => "current_word.showKanji"}<
+    {{current_word.kanji}}
+  %span.romaji{"ng-if" => "current_word.showRomaji"}<
+    {{current_word.romaji}}
+  %span.only-romaji{"ng-if" => "current_word.showOnlyRomaji"}
+    {{current_word.romaji}}
+.means
+  means:
+.row
+  .col-md-6{"ng-repeat" => "answer in answers track by $index"}
+    %input{"type" => "radio", "id" => "answer{{$index+1}}", "name" => "ans", "ng-value" => "answer.id", "ng-model" => "$parent.selected_answer_id"}
+    %label{"for" => "answer{{$index+1}}"}
+      {{answer.translation}}
+%button.btn.btn-primary.btn-lg{"ng-click" => "end_radio_question(current_word, selected_answer_id)"}
+  Next

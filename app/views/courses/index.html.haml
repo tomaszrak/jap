@@ -1,0 +1,30 @@
+%h1 Listing courses
+
+%table.table.table-striped.table-hover
+  %tr
+    %th Name
+    - if current_user.admin?
+      %th
+      %th
+      %th
+    - else
+      %th
+
+  - @courses.each do |course|
+    %tr
+      %td
+        = course.name
+        - if course.learned_by?(current_user)
+          %span.label.label-info
+            Started
+      - if current_user.admin?
+        %td= link_to 'Show', course
+        %td= link_to 'Edit', edit_course_path(course)
+        %td= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' }
+      - else
+        %td= link_to 'Learn', learn_course_path(course), class: "btn btn-default"
+
+%br
+
+- if current_user.admin?
+  = link_to 'New Course', new_course_path, class: "btn btn-primary btn-lg"
